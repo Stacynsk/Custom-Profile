@@ -1,0 +1,20 @@
+num_tickets = int(input("Введите количество билетов: "))
+ages = []
+for i in range(num_tickets):
+    age = int(input("Введите возраст посетителя: "))
+    ages.append(age)
+
+total_cost = 0
+for age in ages:
+    if age < 18:
+        cost = 0
+    elif age >= 18 and age < 25:
+        cost = 990
+    else:
+        cost = 1390
+    total_cost += cost
+
+if num_tickets > 3:
+    total_cost *= 0.9
+
+print("Общая стоимость билетов:", total_cost)
